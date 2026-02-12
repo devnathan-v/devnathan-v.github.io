@@ -1,0 +1,266 @@
+/* Global Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --font-heading: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-heading);
+    overflow-x: hidden;
+    color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(33, 37, 41, 0.85);
+    /* Semi-transparent dark */
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.glass-nav.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+/* Dynamic Background Shapes */
+.bg-shape {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+    filter: blur(80px);
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: #6610f2;
+    /* Purple accent */
+    border-radius: 50%;
+    bottom: -50px;
+    right: -50px;
+    filter: blur(80px);
+}
+
+.z-index-1 {
+    z-index: 1;
+    position: relative;
+}
+
+.hero-img-box {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 10px;
+    background: linear-gradient(45deg, var(--primary-color), transparent);
+    animation: none;
+    /* Removed rotation */
+    box-shadow: 0 0 30px rgba(13, 110, 253, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-img-box:hover {
+    transform: scale(1.05);
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+
+
+/* About Section */
+.line {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Skills */
+.skill-item .progress {
+    overflow: visible;
+    background-color: #e9ecef;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item .progress-bar {
+    position: relative;
+    border-radius: 50rem;
+    background-image: linear-gradient(45deg, #0d6efd, #0dcaf0);
+}
+
+/* Timeline */
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+}
+
+.date-col h5 {
+    color: var(--primary-color);
+}
+
+/* Projects */
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-card .icon-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(13, 110, 253, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .icon-box {
+    background: var(--primary-color);
+    color: white !important;
+}
+
+.project-card:hover .icon-box i {
+    color: white !important;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Contact Form - Material Outlined Style */
+.form-floating>.form-control {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff !important;
+    border-radius: 4px;
+    height: calc(3.5rem + 2px);
+    box-shadow: none;
+}
+
+.form-floating>.form-control:focus {
+    background-color: transparent !important;
+    border-color: var(--primary-color);
+    box-shadow: inset 0 0 0 1px var(--primary-color);
+}
+
+.form-floating>label {
+    color: rgba(255, 255, 255, 0.6);
+    padding: 1rem 0.75rem;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    opacity: 1;
+    transform: scale(0.85) translateY(-50%) translateX(0.5rem);
+    background-color: var(--dark-color);
+    color: var(--primary-color) !important;
+    padding: 0 6px;
+    height: auto;
+    width: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.form-floating>.form-control:not(:focus):not(:placeholder-shown)~label {
+    color: rgba(255, 255, 255, 0.6);
+}
